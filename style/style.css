@@ -8,84 +8,109 @@ body {
   background-color: #000000;
 }
 
-a {
-  color: white;
-  text-decoration: none;
-}
-
 em {
   color: #da339b;
   font-style: normal;
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 1.5em;
   color: white;
   font-family: 'Montserrat', sans-serif;
   color: #da339b;
   text-align: center;
+  margin-bottom: 60px;
+  text-decoration: underline;
+  text-decoration-color: #da339b; /* Couleur du soulignement */
+  text-underline-offset: 6px;
 }
 
-p {
-  font-size: 1.1em;
-  color: white;
-  text-align: center;
-  margin: 80px 300px; /* Ajustez la marge comme souhaité */
-  line-height: 1.4; /* Ajustez l'interligne comme souhaité */
-}
+
+
+/**********************************************/
+/******************HEADER*********************/
+/*********************************************/
 
 header {
   background-color: rgb(0, 0, 0);
-  padding: 5px 0px;
-  text-align: center;
-  position: fixed; /* Fixe le header en haut de la page */
-  top: 0; /* Place le header tout en haut de la page */
-  width: 100%; /* Utilise la largeur complète de la page */
-  z-index: 1000; /* Assure que le header est affiché au-dessus du contenu */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 10px;
 }
 
-header img {
-  max-width: 200px; /* Ajustez la largeur maximale du logo selon vos besoins */
-  height: auto; /* Laissez la hauteur ajustée automatiquement pour préserver les proportions */
+.logo-container img {
+  max-width: 200px;
+  height: auto;
 }
 
-/* Espace entre les icone réseaux sociaux */
+/*.fleur img {                                    
+  max-width: 100px;
+  height: auto;
+} 
+
+<div class="fleur">
+  <img src="images/logo/fleur.png" alt="Fleur">
+</div>
+*/
+
+.social-icons {
+  display: flex;
+  align-items: center; /* Aligne les icônes de réseaux sociaux verticalement */
+  margin-right: 20px;
+}
+
 .lien-icone {
   display: inline-block;
-  vertical-align: top;
-  margin: 30px; /* Largeur entre les icones*/
+  margin-left: 10px;
 }
 
 .lien-icone img {
-  max-width: 40px; /* Ajustez la largeur maximale des icônes */
-  height: auto; /* Laissez la hauteur ajustée automatiquement pour préserver les proportions */
+  max-width: 40px;
+  height: auto;
 }
 
-/* Transparence icones réseaux sociaux */
 .lien-icone:hover {
   opacity: 0.5;
 }
 
-footer {
+/**********************************************/
+/******************BIO************************/
+/*********************************************/
+
+p {
+  font-size: 1.1em;
+  color: white;
+  margin: 60px 25%; /* Ajustez la marge comme souhaité */
+  line-height: 1.4; /* Ajustez l'interligne comme souhaité */
   text-align: center;
-  padding: 50px;
 }
 
-/* Disposition du nav */
+.portrait {     /* Photo Bio */
+  display: block;
+  margin: 0 auto;
+  max-width: 50%;
+  height: auto;
+  padding-bottom: 80px;
+  padding-top: 250px;
+}
+
+/**********************************************/
+/******************PHOTOS**********************/
+/*********************************************/
 
 .accueil-photos {
   background-color: rgb(0, 0, 0);
   text-align: center; /* Centre le contenu horizontalement */
 }
 
-.titre {
-  color: #da339b;
-  margin-bottom: 50px;
-}
-
 .photopetite {
   margin: 10px 10px; /* Espacement horizontal entre les images (20px divisé par 2) */
-  max-width: 50%; /* Ajustez la largeur des images selon vos besoins */
+  max-width: 45%; /* Ajustez la largeur des images selon vos besoins */
   height: auto;
 }
 
@@ -93,13 +118,15 @@ footer {
   max-width: 50%; /* Ajustez la largeur des images selon vos besoins */
   height: auto;
 }
-.portrait {     /* Photo de portrait */
-  display: block;
-  margin: 0 auto;
-  max-width: 50%;
-  height: auto;
-  padding-bottom: 80px;
-  padding-top: 250px;
+
+
+/**********************************************/
+/******************FOOTER*********************/
+/*********************************************/
+
+footer {
+  text-align: center;
+  padding: 50px;
 }
 
 span {
@@ -109,5 +136,3 @@ span {
   color: white;
   padding-top: 20px;
 }
-
-
