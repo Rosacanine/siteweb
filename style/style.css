@@ -3,26 +3,24 @@
 }
 
 body {
-  font-family: 'Manrope', sans-serif;
-  font-size: 1em;
   background-color: #000000;
+  font-family: 'Oswald', sans-serif;
 }
 
 em {
-  color: #da339b;
+  color: #ff008c;
   font-style: normal;
 }
 
 h1 {
-  font-size: 1.5em;
+  font-size: 2em;
   color: white;
-  font-family: 'Montserrat', sans-serif;
-  color: #da339b;
+  color: #ff008c;
   text-align: center;
   margin-bottom: 60px;
-  text-decoration: underline;
-  text-decoration-color: #da339b; /* Couleur du soulignement */
-  text-underline-offset: 6px;
+  /*text-decoration: underline; */
+  /*text-decoration-color: #ff008c; */ /* Couleur du soulignement */
+  /*text-underline-offset: 6px; */
 }
 
 
@@ -40,11 +38,11 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 10px 10px;
+  padding: 15px 10px;
 }
 
 .logo-container img {
-  max-width: 200px;
+  max-width: 120px;
   height: auto;
 }
 
@@ -83,7 +81,7 @@ header {
 /*********************************************/
 
 p {
-  font-size: 1.1em;
+  font-size: 1.3em;
   color: white;
   margin: 60px 25%; /* Ajustez la marge comme souhaité */
   line-height: 1.4; /* Ajustez l'interligne comme souhaité */
@@ -96,7 +94,7 @@ p {
   max-width: 50%;
   height: auto;
   padding-bottom: 80px;
-  padding-top: 250px;
+  padding-top: 180px;
 }
 
 /**********************************************/
