@@ -126,4 +126,21 @@ p {
     font-style: italic;
     color: white;
   }
-}  
+
+/**********************************************/
+/******************EPK************************/
+/*********************************************/
+
+.epk-logo img {
+  max-width: 300px;
+}
+
+.epk {
+  font-size: 2.4em;
+}
+
+.epk-lien a {
+  font-size: 1.6em; /* Taille de la police */
+}
+
+}
