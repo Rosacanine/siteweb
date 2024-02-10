@@ -1,0 +1,48 @@
+/**********************************************/
+/******************EPK************************/
+/*********************************************/
+* {
+    margin: 0;
+  }
+  
+  body {
+    background-color: #000000;
+    font-family: 'Oswald', sans-serif;
+  }
+
+  .epk-logo {
+    text-align: center; /* Centrer horizontalement le contenu du div */
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+  
+  .epk-logo img {
+    display: block; /* Assurez-vous que l'image est un élément de bloc */
+    margin: 0 auto; /* Marge automatique horizontale pour centrer l'image */
+    max-width: 500px;
+    height: auto;
+  }
+  
+  h1 {
+    color: white; /* Texte en blanc */
+    font-size: 3em;
+    text-align: center;
+  }
+  
+  /* Style pour le conteneur du lien de téléchargement */
+  .epk-lien {
+    text-align: center; /* Centrer le contenu */
+    margin-top: 60px; /* Marge supérieure pour espacement */
+  }
+  
+  /* Style pour le lien de téléchargement */
+  .epk-lien a {
+    color: white; /* Texte en blanc */
+    text-decoration: none; /* Supprimer la soulignement du lien */
+    font-size: 1.8em; /* Taille de la police */
+  }
+  
+  .epk-lien a:hover {
+    color: #ff008c; /* Nouvelle couleur lorsque survolé */
+  }
+  
