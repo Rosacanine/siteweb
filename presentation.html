@@ -30,10 +30,28 @@
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="msapplication-config" content="images/logo/icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<body>
-  <iframe src="RC-Présentation.pdf" width="100%" height="100%"></iframe>
+<body  class="body-epk">
+  <!-- Modal -->
+  <div id="myModal" class="modal show" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Présentation de Rosa<span>C</span>anine </h4>
+        </div>
+        <div class="modal-body">
+          <object data="RC-Presentation.pdf" type="application/pdf">
+              <embed src="RC-Presentation.pdf" type="application/pdf" />
+          </object>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
