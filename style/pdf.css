@@ -2,16 +2,16 @@
     background-color: black;
     }
  
-    h4.modal-title {
+h4.modal-title {
     font-size: 1.5em;
     font-family: oswald;
     color: white;
-    }
+}
     
-    span {
+span {
     color: #ff008c;
-    }
+}
     
-    div.modal-content {
-        background-color: black;
-        }
+div.modal-content {
+    background-color: black;
+}
