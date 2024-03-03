@@ -1,5 +1,17 @@
-body, html, iframe {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
+.body-epk {
+    background-color: black;
+    }
+ 
+    h4.modal-title {
+    font-size: 1.5em;
+    font-family: oswald;
+    color: white;
+    }
+    
+    span {
+    color: #ff008c;
+    }
+    
+    div.modal-content {
+        background-color: black;
+        }
