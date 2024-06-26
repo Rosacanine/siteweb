@@ -42,8 +42,16 @@ header {
 }
 
 .logo-container img {
-  max-width: 120px;
-  height: auto;
+  max-width: auto;
+  height: 80px;
+}
+
+.logo-grand {
+  display: block;
+}
+
+.logo-petit {
+  display: none;
 }
 
 /*.fleur img {                                    
