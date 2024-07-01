@@ -142,5 +142,28 @@ p {
     color: white;
   }
 
+/***********************************************/
+/*****************Page musique*****************/
+/**********************************************/
+
+
+.album {
+  display: block;
+  margin: 0 auto;
+  max-width: 50%;
+  height: auto;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.logo-musique {
+  display: block;
+  margin: 0 auto;
+  max-width: 20%;
+  max-height: auto;
+  padding-bottom: 20px;
+  padding-top: 0px;
+}
+
 
 }
