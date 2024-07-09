@@ -1,0 +1,49 @@
+
+/***********************************************/
+/*****************Page musique*****************/
+/**********************************************/
+body {
+    font-family: 'Oswald', sans-serif;
+    color: #ff008C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black; /* Ajouter un fond pour le contraste */
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 400px; /* Ajustez selon vos besoins */
+    margin: 40px auto; /* Centrer et espacer la section */
+}
+
+.icone-music {
+    flex: 1 1 calc(33.333% - 20px); /* Ajustez la marge selon vos besoins */
+    box-sizing: border-box;
+    margin: 10px;
+    text-align: center;
+}
+
+.icone-music:hover {
+    opacity: 0.5;
+  }
+
+.logo-musique {
+    max-width: 110px;
+    height: auto;
+}
+
+.album {
+    width: 100%;
+    max-width: 350px; /* Ajustez selon vos besoins */
+    display: block;
+    margin: 20px auto; /* Centrer l'image */
+}
+
+h2 {
+    text-align: center;
+    margin: 20px 0;
+}
