@@ -214,4 +214,9 @@ p {
   margin: 20px auto; /* Centrer l'image */
 }
 
+.logo-musique {
+  max-width: 100px;
+  height: auto;
+}
+
 }
