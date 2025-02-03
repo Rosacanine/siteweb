@@ -1,0 +1,343 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eee0e0;
+  font-family: 'Oswald', sans-serif;
+  padding-top: 110px; /* Compense la hauteur du header fixe */
+}
+
+em {
+  color: #FF008C;
+  font-style: normal;
+}
+
+h1 {
+  font-size: 2em;
+  color: #FF008C;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: white;
+}
+
+header {
+  background-color: rgb(0, 0, 0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center; /* Aligne les éléments verticalement */
+  padding: 15px; /* Ajustez le padding selon vos besoins */
+}
+
+.top {
+  display: flex;
+  align-items: center; /* Aligne les éléments verticalement */
+  justify-content: space-around;
+}
+
+/* Conteneur du logo */
+
+.logo-container img {
+   height: auto; /* Assurez-vous que la hauteur est automatique pour garder les proportions */
+   max-height: 80px; /* Hauteur maximale pour le logo grand */
+}
+
+.logo-petit {
+  display: none; /* Masque le petit logo par défaut */
+}
+
+.menu-icon {
+   cursor: pointer;
+}
+
+.menu-icon i {
+   font-size: 24px; /* Taille de l'icône du menu */
+   color: #ff008c; /* Couleur de l'icône du menu */
+}
+
+.lien-icone {
+    display: inline-block; 
+    margin-left: 15px; /* Espacement entre les icônes */
+}
+
+.lien-icone img {
+    width: 40px; /* Taille des icônes des réseaux sociaux */
+    height: auto; /* Maintient le ratio d'aspect */
+}
+
+.lien-icone:hover {
+    opacity: 0.5; /* Effet au survol */
+}
+
+/**********************************************/
+/******************NAVIGATION******************/
+/**********************************************/
+
+nav {
+    display: none; 
+    position: fixed; 
+    top: 110px; 
+    left: 0; 
+    width: 100%; 
+    background-color: rgba(0,0,0,0.9); 
+    z-index: 999; 
+}
+
+nav.show-menu {
+    display: block; 
+}
+
+nav ul {
+    list-style-type: none; 
+    display: flex; 
+    justify-content: center; 
+    padding:10px; 
+}
+
+nav ul li {
+    margin: 0 15px; 
+}
+
+nav ul li a {
+    color: white; 
+    text-decoration:none; 
+    font-size:1.2em; 
+    transition:.3s ease color;
+    font-weight: bold;
+    
+}
+
+nav ul li a:hover {
+    color:#FF008C; 
+}
+
+/* Ajustement de la marge pour le contenu principal en dessous du nav*/
+main {
+    padding-top: 50px; 
+}
+
+section {
+  scroll-margin-top: 170px;
+}
+
+/**********************************************/
+/******************BIO************************/
+/*********************************************/
+
+p {
+    font-size:1.3em; 
+    color:white; 
+    margin :40px 25%; 
+    line-height :1.4 ; 
+    text-align:center ; 
+}
+
+.portrait {     
+   display:block ;  
+   margin :0 auto ;  
+   max-width :50% ;  
+   height:auto ;  
+   padding-bottom :40px ;  
+   padding-top :20px ;  
+}
+
+/**********************************************/
+/******************MUSIQUE*********************/
+/**********************************************/
+
+.music {  
+   text-align:center ;  
+   padding-bottom :40px ;  
+}
+
+.album {  
+   width :100% ;  
+   max-width :400px ;  
+   display:block ;  
+   margin :20px auto ; 
+}
+
+.album:hover {  
+   opacity :0.6 ;  
+}
+
+/**********************************************/
+/******************PHOTOS**********************/
+/*********************************************/
+
+.accueil-photos {  
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+/**********************************************/
+/******************CONCERTS********************/
+/*********************************************/
+
+.concerts {  
+   display:flex ;  
+   flex-direction :column ;  
+   align-items:center ;  
+   width :100% ;  
+}
+
+.concerts-table {  
+   width : 50% ;
+   max-width :800px ;
+   table-layout :fixed ;
+   border-collapse :collapse ;
+}
+
+.concerts-table th,
+.concerts-table td {  
+   padding :5px ; /* hauteur entre les lignes du tableau */
+   text-align:center ;
+   overflow:hidden ;
+   text-overflow :ellipsis ;
+   white-space :nowrap ;
+}
+
+.concerts-table th {  
+   font-weight:bold ;
+   color:#ff008c ;
+   border-bottom :1px solid #ff008c ;
+}
+
+.concerts-table td {  
+   color:white ;
+}
+
+.passés {
+   margin-top: 60px;
+}
+
+/**********************************************/
+/******************FOOTER*********************/
+/*********************************************/
+
+footer {   
+     text-align:center ;
+     padding :50px ;
+ }
+
+footer span {   
+     font-size:.8em ;
+     font-style :italic ;
+     color:white ;
+ }
+
+ /***********************************************/
+/*****************Page musique*****************/
+/**********************************************/
+
+.page-album {
+   width: 100%;
+   max-width: 300px; /* Ajustez selon vos besoins */
+   display: block;
+   margin: 20px auto; /* Centrer l'image */
+ }
+
+ /***********************************************/
+/*****************Page Carroussel*****************/
+/**********************************************/
+
+.container {
+   display: flex;
+   flex-direction: column;
+   position: relative;
+}
+
+.slider {
+   display: flex;
+   justify-content: flex-start;
+   width: 500px;
+   overflow-x: scroll;
+   scroll-snap-type: x mandatory;
+   scroll-behavior: smooth;
+   box-shadow: 0 3px 10px rgba(216, 36, 162, 0.4);
+}
+
+.slide {
+   width: 100%;
+   scroll-snap-align: start;
+}
+
+.slider_indicators {
+   display: flex;
+   justify-content: center;
+   padding: 5px 0;
+}
+
+.indicator {
+   height: 10px;
+   width: 10px;
+   border-radius: 50%;
+   background-color: #FF008C;
+   margin: 4px;
+   cursor: pointer;
+   box-shadow: 0 1px 3px rgba(45, 184, 18, 0.5) ;
+   transition: all 0.2s ease;
+}
+
+.indicator:hover {
+   background-color: rgba(240, 128, 128, 0.75);
+ }
+
+ .indicator.active {
+   background-color: rgba(240, 128, 128, 1);
+ }
+
+ .nav-btn {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   font-size: 60px;
+   cursor: pointer;
+   transition: all 0.2s ease;
+   color: #FF008C;
+ }
+
+ .nav-btn:hover {
+   color: rgba(240, 128, 128, 1);
+   top: 48%;
+ }
+ 
+ #gonext-btn {
+   left: 100%;
+ }
+ 
+ #goback-btn {
+   right: 100%;
+ }
+
+ .slider::-webkit-scrollbar {
+   width: 0 !important;
+   height: 0 !important;
+ }
+
+ @media screen and (max-width: 680px) {
+   .container {
+     width: 100%;
+     margin: 0 20px;
+   }
+ 
+   .slider {
+     width: 100%;
+   }
+ 
+   .nav-btn {
+     display: none !important;
+   }
+ }
