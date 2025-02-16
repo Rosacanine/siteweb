@@ -1,0 +1,140 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/fonds/tissu.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+em {
+  color: #FF008C;
+  font-style: normal;
+}
+
+h1 {
+  font-size: 2em;
+  color: #FF008C;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  color: white;
+}
+
+p {
+  font-size:1.3em; 
+  color:white; 
+  line-height :1.4 ; 
+  text-align:left ; 
+}
+
+/*************** CARROUSSEL **************/
+
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-top: 10px;
+}
+
+.slider {
+  display: flex;
+  justify-content: flex-start;
+  width: 500px;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+.slide {
+  width: 100%;
+  scroll-snap-align: start;
+}
+
+.slider__indicators {
+  display: flex;
+  justify-content: center;
+  padding: 5px 0;
+}
+
+.indicator {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: #FF008C;
+  margin: 4px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  transition: all 0.2s ease;
+}
+
+.indicator:hover {
+  background-color: rgba(240, 128, 128, 0.75);
+}
+
+.indicator.active {
+  background-color: rgba(240, 128, 128, 1);
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 60px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #FF008C;
+}
+
+.nav-btn:hover {
+  color: rgba(240, 128, 128, 1);
+  top: 48%;
+}
+
+#gonext-btn {
+  left: 100%;
+}
+
+#goback-btn {
+  right: 100%;
+}
+
+.slider::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/*************** BIO **************/
+
+.bio-section {
+  display: flex;
+  flex-direction: row;
+  padding: 40px 240px;
+}
+
+.bio {
+  flex: 3;
+}
+
+.music {
+  flex: 2;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.album {
+  width: 100%;
+  max-width: 300px; /* Ajustez selon vos besoins */
+  display: block;
+  margin: 10% auto; /* Centrer l'image */
+}
