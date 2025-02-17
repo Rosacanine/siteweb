@@ -90,11 +90,23 @@
         <section id="bio">
             <div>
                 <h1>BIO</h1>
-                <p>
-                    Rosa<em>C</em>anine éclot en mars 2023. Tirant son nom de cet arbuste épineux et rustique, 
-                    cette rose-chien leur ressemble. Une bande son rock, dynamique et directe, en français dans le texte. 
-                    Rosa<em>C</em>anine caresse l’âme et pique au cœur. Positif, poétique et passionné.
-                </p>     
+                <p>Rosa<em>C</em>anine éclot en mars 2023. Tirant son nom de cet arbuste épineux et rustique, cette rose-chien leur ressemble. 
+                    Une bande son rock, dynamique et directe, en français dans le texte. Rosa<em>C</em>anine caresse l’âme et pique au cœur. 
+                    Positif, poétique et passionné.
+                    <span id="voir-plus-contenu">
+                    Cette bande aurait pu s’appeler « Les Copains d’abord ». Ces quatre-là n’attendaient qu’une opportunité pour se retrouver. 
+                    Originaire de Toulouse (Nord s’il vous plaît), Mathieu, Johan, Eric et Frédéric composent les membres de ce généreux gang. 
+                    Biberonnés à la sauce rock de l’amérique fugazienne, les guitares sont autant rageuses que mélodieuses. 
+                    La rythmique, ancrée, soutient cette voix habitée et ces mots qui vous embarquent. 
+                    Des concerts qui se jouent comme s’il s’agissait du dernier. Les regards sont complices et l’énergie communicative. 
+                    Dès ses débuts, la scène s’impose comme une nécessité viscérale. 
+                    La formation enchaîne les concerts tous terrains, des clubs locaux aux petites scènes et premières parties. 
+                    À chaque sortie, le propos s’affine et s’affirme pour laisser exploser cette hargne généreuse qui se balance entre 
+                    explosions soniques et moment d’accalmie suspendue. 
+                    </span>
+                    <br>
+                    <a href="#" id="voir-plus-bouton">Lire plus</a>
+                    </p>    
         </section>
             
         <section id="musique" class="music">
@@ -379,46 +391,7 @@
             </span>
         </div>
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuIcon = document.querySelector('.menu-icon');
-            const nav = document.querySelector('nav');
-            let timeoutId;
-
-        // Fonction pour afficher le menu
-        function showMenu() {
-            nav.classList.add('show-menu');
-        }
-
-        // Fonction pour cacher le menu
-        function hideMenu() {
-            timeoutId = setTimeout(() => {
-                nav.classList.remove('show-menu');
-            }, 600); // Délai de 600ms avant de cacher le menu
-        }
-
-        // Affiche le menu au clic sur l'icône
-        menuIcon.addEventListener('click', function(event) {
-            event.stopPropagation(); // Empêche l'événement de se propager au document
-            showMenu();
-        });
-
-        // Empêche le menu de se fermer immédiatement lorsqu'on passe la souris dessus
-        nav.addEventListener('mouseenter', function() {
-            clearTimeout(timeoutId);
-        });
-
-        // Cache le menu lorsque la souris quitte la zone de navigation
-        nav.addEventListener('mouseleave', hideMenu);
-
-        // Cache le menu si on clique en dehors
-        document.addEventListener('click', function(event) {
-            if (!nav.contains(event.target) && !menuIcon.contains(event.target)) {
-                hideMenu();
-            }
-        });
-    });
-    </script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

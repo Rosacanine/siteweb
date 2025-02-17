@@ -103,6 +103,16 @@ p {
   height: auto;
   padding-bottom: 30px;
 }
+#voir-plus-contenu {
+  display: none;
+}
+
+#voir-plus-bouton {
+  color: #FF008C;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.6em;
+}
 
 /**********************************************/
 /******************PHOTOS**********************/
@@ -196,7 +206,7 @@ p {
     padding: 20px;
   }
 
-  span {
+  footer span {
     display: block;
     font-size: 0.5em;
     font-style: italic;

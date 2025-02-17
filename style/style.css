@@ -152,6 +152,17 @@ p {
    padding-top :20px ;  
 }
 
+#voir-plus-contenu {
+   display: none;
+}
+
+#voir-plus-bouton {
+   color: #FF008C;
+   text-decoration: none;
+   cursor: pointer;
+   font-size: 0.7em;
+}
+
 /**********************************************/
 /******************MUSIQUE*********************/
 /**********************************************/
