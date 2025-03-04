@@ -123,16 +123,25 @@ p {
     text-align: center; /* Centre le contenu horizontalement */
   }
   
-  .photopetite {
-    margin: 5px 5px; /* Espacement horizontal entre les images (20px divisé par 2) */
-    max-width: 45%; /* Ajustez la largeur des images selon vos besoins */
-    height: auto;
-  }
-  
   .photogrande {
     max-width: 70%; /* Ajustez la largeur des images selon vos besoins */
     height: auto;
+    margin-bottom: 20px;
   }
+
+  .photopetite {
+    margin: 5px 5px; /* Espacement horizontal entre les images (20px divisé par 2) */
+    max-width: 60%; /* Ajustez la largeur des images selon vos besoins */
+    height: auto;
+  }
+
+  .photopetite2 {  
+    margin : 5px 5px ;     
+    max-width: 30%; /* Ajustez la largeur des images selon vos besoins */
+    height: auto;
+ }
+  
+
   
 /**********************************************/
 /******************MUSIQUE*********************/
