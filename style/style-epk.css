@@ -8,7 +8,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("../images/fonds/tissu.png");
+  background-color: black;
   background-size: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -19,23 +19,6 @@ em {
   font-style: normal;
 }
 
-h1 {
-  font-size: 2em;
-  color: #FF008C;
-  text-align: center;
-}
-
-h2 {
-  text-align: center;
-  color: white;
-}
-
-p {
-  font-size:1.3em; 
-  color:white; 
-  line-height :1.4 ; 
-  text-align:left ; 
-}
 
 /*************** CARROUSSEL **************/
 
@@ -46,10 +29,16 @@ p {
   padding-top: 10px;
 }
 
+.slider-section{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 .slider {
   display: flex;
   justify-content: flex-start;
-  width: 500px;
+  width: 800px;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
@@ -114,27 +103,121 @@ p {
   height: 0 !important;
 }
 
-/*************** BIO **************/
+/**********************************************/
+/******************BIO et MUSiC****************/
+/*********************************************/
 
-.bio-section {
+.logo-rc{
+  max-width: 200px;
+  margin-bottom: 30px;
+}
+
+.origine{
+  margin-bottom: 30px;
+}
+
+.bio-music {
   display: flex;
   flex-direction: row;
-  padding: 40px 240px;
+  padding: 40px 5%;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .bio {
-  flex: 3;
+  flex: 1;
+  padding-right: 20px; /* Ajoute un peu d'espace à droite */
 }
 
 .music {
-  flex: 2;
-  padding-left: 10px;
-  padding-right: 10px;
+  flex: 1;
+  padding-left: 20px; /* Ajoute un peu d'espace à gauche */
 }
 
-.album {
+.music img.album {
   width: 100%;
-  max-width: 300px; /* Ajustez selon vos besoins */
+  max-width: 350px; /* Limite la largeur de l'image */
+  height: auto;
   display: block;
-  margin: 10% auto; /* Centrer l'image */
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
+
+/* Pour améliorer la lisibilité du texte */
+.bio p {
+  font-size:1.3em; 
+  color:white; 
+  line-height :1.4 ;
+  margin-top: 30px; 
+
+}
+
+h1 {
+  font-size: 2em;
+  color: #FF008C;
+}
+
+h2 {
+  color: white;
+  margin-top: 30px;
+}
+
+h3{
+  color: rgba(255, 255, 255, 0.9); /* Blanc avec 10% de transparence */
+  margin-bottom: 10px;
+}
+
+/***************************/
+/*******telechargement****/
+/************************/
+
+.download-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: black;
+  border: 1px solid #FF008C;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.download-link:hover {
+  background-color: #FF008C;
+}
+
+.booking p {
+  font-size:1.1em; 
+  color:white; 
+  line-height :1.4 ;
+  margin-top: 30px; 
+
+}
+
+
+/**********************************************/
+/******************FOOTER*********************/
+/*********************************************/
+
+.lien-icone {
+  display: inline-block; 
+  margin-left: 15px; /* Espacement entre les icônes */
+}
+
+.lien-icone img {
+  width: 40px; /* Taille des icônes des réseaux sociaux */
+  height: auto; /* Maintient le ratio d'aspect */
+}
+
+.lien-icone:hover {
+  opacity: 0.5; /* Effet au survol */
+}
+
+.social-icons{
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
