@@ -1,8 +1,10 @@
 const imagesArray = [
-    "images/photos/RC-fleur.png",
+    "images/photos/RC-E.png",
+    "images/photos/RC-photo-bio.png",
+    "images/photos/RC-G.png",
     "images/photos/RC-A.png",
     "images/photos/RC-B.png",
-    "images/photos/RC-C.png"
+    "images/photos/RC-L.png"
 ];
 
 // DOM
