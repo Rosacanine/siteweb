@@ -1,14 +1,144 @@
-@media screen and (max-width: 680px) {
-  .container {
-    width: 100%;
-    margin: 0 20px;
+@media screen and (max-width: 996px){
+
+  * {
+    margin: 0;
+  }
+  
+  body {
+    background-color: #000000;
+    font-family: 'Oswald', sans-serif;
+  }
+    
+  em {
+    color: #ff008c;
+    font-style: normal;
   }
 
-  .slider {
-    width: 100%;
-  }
+/*************** CARROUSSEL **************/
 
-  .nav-btn {
-    display: none !important;
-  }
+.nav-btn {
+  display: none;
+}
+
+.slider {
+  width: 100%; /* Ajustez la largeur du slider pour qu'il occupe toute la largeur disponible */
+}
+
+.slider-section {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/**********************************************/
+/******************BIO et MUSiC****************/
+/*********************************************/
+
+.bio-music {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+}
+
+.bio, .music {
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.logo-rc {
+  max-width: 150px;
+  margin-bottom: 20px;
+}
+
+
+.bio p {
+  font-size: 0.9em;
+  line-height: 1.3;
+}
+
+.booking .download-link {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.booking h1 {
+  margin-top: 20px;
+}
+
+h1 {
+  font-size: 1.2em;
+  color: #FF008C;
+}
+
+h2 {
+  font-size: 1em;
+  color: white;
+  margin-top: 30px;
+}
+
+h3{
+  font-size: 0.9em;
+  margin-bottom: 5px;
+  color: rgba(255, 255, 255, 0.9); /* Blanc avec 10% de transparence */
+  margin-bottom: 10px;
+}
+
+.album{
+  margin: auto;
+}
+
+/***************************/
+/*******telechargement****/
+/************************/
+
+.download-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: black;
+  border: 1px solid #FF008C;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.download-link:hover {
+  background-color: #FF008C;
+}
+
+.booking p {
+  font-size:0.9em; 
+  color:white; 
+  line-height :1.4 ;
+  margin-top: 20px; 
+}
+
+/**********************************************/
+/******************FOOTER*********************/
+/*********************************************/
+
+.social-icons {
+  display: flex;
+  align-items: center; /* Aligne les icônes de réseaux sociaux verticalement */
+  margin-top: 1px;
+}
+  
+.lien-icone {
+  display: inline-block;
+  margin-left: 10px;
+}
+  
+.lien-icone img {
+  max-width: 35px;
+  height: auto;
+}
+  
+.lien-icone:hover {
+  opacity: 0.5;
+}
+
 }
