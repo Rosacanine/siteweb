@@ -214,6 +214,18 @@ p {
 /******************VIDEOS*********************/
 /*********************************************/
 
+.photo-video {  
+   max-width :40% ;   
+   height:auto ;
+   display:block ;
+   margin :50px auto ;
+}
+
+.photo-video:hover {  
+   opacity :0.7 ;  
+}
+
+/***************
 .yt iframe{
    aspect-ratio: 16/9;
    width: 50%;
@@ -223,7 +235,7 @@ p {
    margin-bottom: 50px;
    text-align:center ;
 }
-
+**************/
 
 
 /**********************************************/
