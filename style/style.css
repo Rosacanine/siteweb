@@ -146,10 +146,9 @@ p {
 .portrait {     
    display:block ;  
    margin :0 auto ;  
-   max-width :50% ;  
+   max-width :35% ;  
    height:auto ;  
    padding-bottom :40px ;  
-   padding-top :20px ;  
 }
 
 #voir-plus-contenu {
