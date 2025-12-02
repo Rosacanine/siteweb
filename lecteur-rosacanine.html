@@ -1,0 +1,208 @@
+<html>
+    <head>
+    <title>IT IT ANITA - "LAURENT" | Pagespromo.le-rim.org</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="noindex">
+    <meta name="googlebot" content="noindex">
+    <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+
+        <link type="text/css" rel="stylesheet" href="https://www.promona.org/assets/css/bootstrap-4.6.1.min.css?1655370589">
+        <link type="text/css" rel="stylesheet" href="https://www.promona.org/assets/css/template-base.css?1654679003">
+        <link type="text/css" rel="stylesheet" href="https://www.promona.org/assets/css/template-Rum.css?1624270342">
+        <script async="" src="//analytics.le-rim.org/matomo.js"></script>
+        <script type="text/javascript" src="https://www.promona.org/assets/js/jquery-3.5.1.slim.min.js?1655370589"></script>
+        <script type="text/javascript" src="https://www.promona.org/assets/js/bootstrap-4.6.1.bundle.min.js?1655370589"></script>
+        <script type="text/javascript" src="https://www.promona.org/assets/js/amplitude.js?1624270342"></script>
+
+    <!-- START SOUNDMANAGER2 -->
+        <script type="text/javascript" src="https://www.promona.org/assets/js/soundmanager2.js?1624270342"></script>
+        <script type="text/javascript" src="https://www.promona.org/assets/js/bar-ui.js?1624270342"></script>
+        <script type="text/javascript" src="https://www.promona.org/assets/js/mp3-player-button.js?1624270342"></script>
+    
+        <link type="text/css" rel="stylesheet" href="https://www.promona.org/assets/css/bar-ui.css?1624270342">
+        <link type="text/css" rel="stylesheet" href="https://www.promona.org/assets/css/player-soundmanager2.css?1624270342">
+        <link type="text/css" rel="stylesheet" href="https://www.promona.org/assets/css/app.css?1624270342">
+        <link type="text/css" rel="stylesheet" href="https://www.promona.org/assets/css/style-front.css?1654697764">
+    <!-- END SOUNDMANAGER2 -->
+
+    <!-- START FLAGS -->
+        <link type="text/css" rel="stylesheet" href="https://www.promona.org/assets/css/flag-icon.min.css?1624270342">
+
+    <script type="text/javascript">
+    function decodeHtml(html) {
+        var txt = document.createElement("textarea");
+        txt.innerHTML = html;
+        return txt.value;
+    }
+   </head>
+
+<body class="landing">
+
+
+
+
+<script>
+let bandcampLinks = document.getElementsByClassName('bandcamp-link');
+for (var i = 0; i < bandcampLinks.length; i++) {
+    bandcampLinks[i].addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+}
+let songElements = document.getElementsByClassName('song');
+for (var i = 0; i < songElements.length; i++) {
+    /*
+        Ensure that on mouseover, CSS styles don't get messed up for active songs.
+    */
+    songElements[i].addEventListener('mouseover', function() {
+        this.style.backgroundColor = '#FF17D5';
+
+        this.querySelectorAll('.song-meta-data .song-title')[0].style.color = '#D420B5';
+        this.querySelectorAll('.song-meta-data .song-artist')[0].style.color = '#D420B5';
+
+        if (!this.classList.contains('amplitude-active-song-container')) {
+            this.querySelectorAll('.play-button-container')[0].style.display = 'block';
+        }
+
+        this.querySelectorAll('img.bandcamp-grey')[0].style.display = 'none';
+        this.querySelectorAll('img.bandcamp-white')[0].style.display = 'block';
+        this.querySelectorAll('.song-duration')[0].style.color = '#D420B5';
+    });
+
+    /*
+        Ensure that on mouseout, CSS styles don't get messed up for active songs.
+    */
+    songElements[i].addEventListener('mouseout', function() {
+        this.style.backgroundColor = '#FFFFFF';
+        this.querySelectorAll('.song-meta-data .song-title')[0].style.color = '#D420B5';
+        this.querySelectorAll('.song-meta-data .song-artist')[0].style.color = '#607D8B';
+        this.querySelectorAll('.play-button-container')[0].style.display = 'none';
+        this.querySelectorAll('img.bandcamp-grey')[0].style.display = 'block';
+        this.querySelectorAll('img.bandcamp-white')[0].style.display = 'none';
+        this.querySelectorAll('.song-duration')[0].style.color = '#607D8B';
+    });
+
+    /*
+        Show and hide the play button container on the song when the song is clicked.
+    */
+    songElements[i].addEventListener('click', function() {
+        this.querySelectorAll('.play-button-container')[0].style.display = 'none';
+    });
+
+</script>
+
+<!-- Two -->
+<section id="player" class="wrapper alt style1">
+    <section class="spotlight">
+        <div id="blue-playlist-container" style="margin: 0 auto;">
+            <!-- Amplitude Player -->
+            <div id="amplitude-player">
+                <!-- Left Side Player -->
+                <div id="amplitude-left">
+                    <img data-amplitude-song-info="cover_art_url" src="images/photos/RC-pochette-2eme.png">
+                    <div id="player-left-bottom">
+                        <div id="time-container">
+                            <span class="current-time">
+                                <span class="amplitude-current-minutes">01</span>:<span class="amplitude-current-seconds">23</span>
+                            </span>
+                            <div id="progress-container">
+                                <input type="range" class="amplitude-song-slider">
+                                <progress id="song-played-progress" class="amplitude-song-played-progress" value="0.6527589359624809"></progress>
+                                <progress id="song-buffered-progress" class="amplitude-buffered-progress" value="1"></progress>
+                            </div>
+                            <span class="duration">
+                                <span class="amplitude-duration-minutes">02</span>:<span class="amplitude-duration-seconds">08</span>
+                            </span>
+                        </div>
+                        <div id="control-container">
+                            <div id="repeat-container">
+                                <div class="amplitude-repeat amplitude-repeat-off" id="repeat"></div>
+                                <div class="amplitude-shuffle amplitude-shuffle-off" id="shuffle"></div>
+                            </div>
+                            <div id="central-control-container">
+                                <div id="central-controls">
+                                    <div class="amplitude-prev" id="previous"></div>
+                                    <div class="amplitude-play-pause amplitude-paused" id="play-pause"></div>
+                                    <div class="amplitude-next" id="next"></div>
+                                </div>
+                            </div>
+                            <div id="volume-container">
+                                <div class="volume-controls">
+                                    <div class="amplitude-mute amplitude-not-muted"></div>
+                                    <input type="range" class="amplitude-volume-slider">
+                                    <div class="ms-range-fix"></div>
+                                </div>
+                                <div class="amplitude-shuffle amplitude-shuffle-off" id="shuffle-right"></div>
+                            </div>
+                        </div>
+                        <div id="meta-container">
+                            <span data-amplitude-song-info="name" class="song-name">08 - GOD</span>
+                            <div class="song-artist-album">
+                                <span data-amplitude-song-info="artist">RosaCanine</span>
+                                <span data-amplitude-song-info="album">RosaCanine - "Une Place"</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Left Side Player -->
+
+                <!-- Right Side Player -->
+                <div id="amplitude-right">
+                    <h5>Tracklist</h5>
+                        <div class="song amplitude-song-container amplitude-play-pause amplitude-paused" data-amplitude-song-index="0">
+                            <div class="song-now-playing-icon-container">
+                                <div class="play-button-container"></div>
+                                <img class="now-playing" src="images/logo/icons/now-playing.svg">
+                            </div>
+                            <div class="song-meta-data">
+                                <span class="song-title">01 - Réponds-moi</span>
+                            </div>
+                        </div>
+                            <div class="song amplitude-song-container amplitude-play-pause amplitude-paused" data-amplitude-song-index="1">
+                            <div class="song-now-playing-icon-container">
+                                <div class="play-button-container"></div>
+                                <img class="now-playing" src="images/logo/icons/now-playing.svg">
+                            </div>
+                            <div class="song-meta-data">
+                                <span class="song-title">02 - User Guide</span>
+                            </div>
+                        </div>
+                            
+                        </div>
+                </div>
+                <!-- End Right Side Player -->
+            </div>
+            <!-- End Amplitdue Player -->
+        </div>
+    </section>
+</section>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        Amplitude.init({
+        songs: [
+            {
+            name: "01 - Réponds-moi",
+            artist: "RosaCanine",
+            album: "Une Place",
+            url: "music/reponds_moi.mp3",  // ton MP3 réel
+            cover_art_url: "images/photos/RC-pochette-2eme.png"  // ta pochette
+            },
+            {
+            name: "02 - Lève la tête",
+            artist: "RosaCanine", 
+            album: "Une Place",
+            url: "music/leve_la_tete.mp3",
+            cover_art_url: "images/photos/RC-pochette-2eme.png"
+            }
+        // ajoute tes autres morceaux
+                    ]
+        });
+    });
+</script>
+    </body>
+        
+</html>
