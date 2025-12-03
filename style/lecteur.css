@@ -1,219 +1,126 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* ===== GENERAL ===== */
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-    color: white;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+  font-family: 'Oswald', sans-serif;
+  background: linear-gradient(135deg, #000000, #131212);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
 }
 
-#player-container {
-    display: flex;
-    max-width: 1000px;
-    width: 100%;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 80px;
 }
 
-#amplitude-left {
-    flex: 1;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: rgba(255,255,255,0.05);
+header .logo-grand {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
 }
 
-#amplitude-left img {
-    width: 250px;
-    height: 250px;
-    border-radius: 15px;
-    object-fit: cover;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    margin-bottom: 30px;
+em { color: #FF008C; font-style: normal; }
+
+h1, h2, h3, h5 {
+  text-align: center;
+  color: white;
+  margin-bottom: 10px;
 }
 
-#player-controls {
-    width: 100%;
-    max-width: 400px;
+h1 { font-size: 2em; color: #FF008C; margin-top: 80px; margin-bottom: 40px; }
+h2 { font-size: 2em; margin-bottom: 10px; }
+h3 { font-size: 1.3em; font-weight: normal; }
+h5 { text-align: left; }
+p { font-size: 1.2em; color:white; margin:10px 10%; text-align:center; }
+
+/* ===== PLAYER MP3 ===== */
+.player {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(12px);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.6);
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 30px;
+  align-items: start;
+  margin-top: 40px;
 }
 
-#time-display {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    font-size: 14px;
-    font-weight: 500;
+.left { display:flex; flex-direction: column; align-items: center; }
+
+.cover img {
+  width: 100%; max-width: 450px; border-radius:16px;
+  margin-bottom:20px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
-#progress-bar {
-    margin-bottom: 30px;
+audio { width:100%; max-width:450px; margin-top:15px; }
+
+.right { display:flex; flex-direction: column; }
+
+.album-info { margin-bottom:15px; }
+.band-name { margin:0; font-size:1.5rem; }
+.album-title { margin:0; font-size:1.2em; font-weight: normal; color:white; }
+
+.tracklist { padding:0; list-style:none; }
+.tracklist li {
+  cursor:pointer; padding:10px; margin-bottom:6px;
+  border-radius:8px; background: rgba(255,255,255,0.05);
+  transition: background 0.2s ease; text-align:left;
+}
+.tracklist li:hover { background: rgba(255,0,140,0.3); }
+.tracklist li.active { background: rgba(255,0,140,0.7); }
+
+/* ===== BIO + VIDEO ===== */
+.bio-video-container {
+  display:flex; justify-content: space-between; align-items:flex-start;
+  flex-wrap:wrap; gap:30px; width:100%;
+}
+.bio-video-section { margin-top:80px; }
+.bio-video-container .left { flex:1 1 400px; max-width:50%; }
+.bio-video-container .right { flex:1 1 400px; max-width:50%; text-align:right; }
+
+.social-icons {
+  margin-top: 80px; display:flex; flex-wrap:wrap; justify-content:center; gap:15px;
+}
+.social-icons img { width:40px; height:40px; object-fit:contain; transition:opacity 0.2s ease; }
+.social-icons img:hover { opacity:0.5; }
+
+.photo-video { width:100%; height:auto; display:block; }
+.photo-video:hover { opacity:0.7; }
+
+/* ===== CONCERTS ===== */
+.concerts { display:flex; flex-direction:column; align-items:center; width:100%; margin-top:40px; }
+
+.concerts-container { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:30px; width:100%; }
+
+.concerts-photos { flex:1 1 400px; max-width:50%; }
+.concerts-photos img { width:100%; height:auto; display:block; margin-bottom: 30%; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+
+.concerts-table-container { flex:1 1 400px; max-width:50%; }
+
+.concerts-table { width:100%; max-width:800px; table-layout:fixed; border-collapse:collapse; }
+.concerts-table th,
+.concerts-table td { padding:5px; text-align:center; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.concerts-table th { font-weight:bold; color:#ff008c; border-bottom:1px solid #ff008c; }
+.concerts-table td { color:white; }
+
+.passés { margin-top:60px; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:900px) {
+  .bio-video-container .left, .bio-video-container .right,
+  .concerts-photos, .concerts-table-container { max-width:100%; text-align:center; }
+  .concerts-photos img { margin:0 auto 20px auto; }
 }
 
-#progress-bar input[type="range"] {
-    width: 100%;
-    height: 6px;
-    background: rgba(255,255,255,0.2);
-    border-radius: 3px;
-    outline: none;
-    -webkit-appearance: none;
-}
-
-#progress-bar input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
-    background: #ff6b6b;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-#main-controls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 25px;
-}
-
-#main-controls button {
-    width: 60px;
-    height: 60px;
-    border: none;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.2);
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-}
-
-#main-controls button:hover {
-    background: rgba(255,255,255,0.3);
-    transform: scale(1.1);
-}
-
-#play-pause.amplitude-playing {
-    background: #4ecdc4;
-}
-
-#volume-control {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-#volume-control input[type="range"] {
-    flex: 1;
-    height: 6px;
-    background: rgba(255,255,255,0.2);
-    border-radius: 3px;
-    outline: none;
-    -webkit-appearance: none;
-}
-
-#volume-control input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 18px;
-    height: 18px;
-    background: #45b7d1;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-#song-info {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.song-name {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 5px;
-    display: block;
-}
-
-.song-artist {
-    font-size: 16px;
-    opacity: 0.8;
-}
-
-/* TRACKLIST */
-#tracklist {
-    flex: 1;
-    padding: 40px;
-    background: rgba(0,0,0,0.2);
-}
-
-#tracklist h3 {
-    margin-bottom: 30px;
-    font-size: 22px;
-    text-align: center;
-    opacity: 0.9;
-}
-
-#playlist {
-    list-style: none;
-}
-
-.song {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 20px;
-    margin-bottom: 10px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.song:hover {
-    background: rgba(255,255,255,0.15);
-    transform: translateX(5px);
-}
-
-.song.amplitude-active-song-container {
-    background: linear-gradient(90deg, #4ecdc4, #44a08d);
-    font-weight: bold;
-}
-
-.song-title {
-    flex: 1;
-}
-
-.song-duration {
-    opacity: 0.7;
-    font-size: 14px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    #player-container {
-        flex-direction: column;
-    }
-    
-    #amplitude-left {
-        padding: 30px 20px;
-    }
-    
-    #amplitude-left img {
-        width: 200px;
-        height: 200px;
-    }
-    
-    #tracklist {
-        padding: 30px 20px;
-    }
+@media (max-width:600px) {
+  .player { grid-template-columns:1fr; justify-items:center; }
+  .right { width:100%; }
+  header .logo-grand { max-width:180px; }
 }
