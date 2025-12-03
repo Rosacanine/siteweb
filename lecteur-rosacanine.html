@@ -1,208 +1,535 @@
-<html>
-    <head>
-    <title>IT IT ANITA - "LAURENT" | Pagespromo.le-rim.org</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="robots" content="noindex">
-    <meta name="googlebot" content="noindex">
-    <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lecteur MP3 - Album</title>
+  <link rel="stylesheet" href="style/lecteur.css" />
+</head>
+<body>
 
-        <link type="text/css" rel="stylesheet" href="https://www.promona.org/assets/css/bootstrap-4.6.1.min.css?1655370589">
-        <link type="text/css" rel="stylesheet" href="https://www.promona.org/assets/css/template-base.css?1654679003">
-        <link type="text/css" rel="stylesheet" href="https://www.promona.org/assets/css/template-Rum.css?1624270342">
-        <script async="" src="//analytics.le-rim.org/matomo.js"></script>
-        <script type="text/javascript" src="https://www.promona.org/assets/js/jquery-3.5.1.slim.min.js?1655370589"></script>
-        <script type="text/javascript" src="https://www.promona.org/assets/js/bootstrap-4.6.1.bundle.min.js?1655370589"></script>
-        <script type="text/javascript" src="https://www.promona.org/assets/js/amplitude.js?1624270342"></script>
+  <header>
+    <a href="#">
+      <img src="images/logo/logo-rosacanine-ligne.svg" alt="Logo RosaCanine" class="logo-grand">
+    </a>
+  </header>
 
-    <!-- START SOUNDMANAGER2 -->
-        <script type="text/javascript" src="https://www.promona.org/assets/js/soundmanager2.js?1624270342"></script>
-        <script type="text/javascript" src="https://www.promona.org/assets/js/bar-ui.js?1624270342"></script>
-        <script type="text/javascript" src="https://www.promona.org/assets/js/mp3-player-button.js?1624270342"></script>
-    
-        <link type="text/css" rel="stylesheet" href="https://www.promona.org/assets/css/bar-ui.css?1624270342">
-        <link type="text/css" rel="stylesheet" href="https://www.promona.org/assets/css/player-soundmanager2.css?1624270342">
-        <link type="text/css" rel="stylesheet" href="https://www.promona.org/assets/css/app.css?1624270342">
-        <link type="text/css" rel="stylesheet" href="https://www.promona.org/assets/css/style-front.css?1654697764">
-    <!-- END SOUNDMANAGER2 -->
+  <div>
+    <h2>Nouvelle EP</h2>
+    <h3>Sortie en 2026</h3>
+  </div>
 
-    <!-- START FLAGS -->
-        <link type="text/css" rel="stylesheet" href="https://www.promona.org/assets/css/flag-icon.min.css?1624270342">
+  <!-- Player MP3 -->
+  <div class="player">
+    <div class="left">
+      <div class="cover">
+        <img src="images/photos/RC-pochette-2em.png" alt="Pochette de l'album" />
+      </div>
+      <audio id="audioPlayer" controls>
+        <source id="audioSource" src="track1.mp3" type="audio/mpeg" />
+        Votre navigateur ne supporte pas l'audio HTML5.
+      </audio>
+    </div>
+    <div class="right">
+      <div class="album-info">
+        <h4 class="band-name">ROSA<em>C</em>ANINE</h4>
+        <h5 class="album-title">" UNE PLACE "</h5>
+      </div>
+      <ul class="tracklist" id="trackList">
+        <li data-src="music/reponds_moi.mp3">01 - Réponds-moi</li>
+        <li data-src="track2.mp3">02 - Le jour d'après</li>
+        <li data-src="track3.mp3">03 - Une place</li>
+        <li data-src="track4.mp3">04 - A ta mémoire</li>
+        <li data-src="track5.mp3">05 - Des yeux</li>
+      </ul>
+    </div>
+  </div>
 
-    <script type="text/javascript">
-    function decodeHtml(html) {
-        var txt = document.createElement("textarea");
-        txt.innerHTML = html;
-        return txt.value;
-    }
-   </head>
+  <script>
+    const audioPlayer = document.getElementById("audioPlayer");
+    const audioSource = document.getElementById("audioSource");
+    const trackList = document.querySelectorAll("#trackList li");
 
-<body class="landing">
-
-
-
-
-<script>
-let bandcampLinks = document.getElementsByClassName('bandcamp-link');
-for (var i = 0; i < bandcampLinks.length; i++) {
-    bandcampLinks[i].addEventListener('click', function(e) {
-        e.stopPropagation();
+    trackList.forEach(track => {
+      track.addEventListener("click", () => {
+        trackList.forEach(t => t.classList.remove("active"));
+        track.classList.add("active");
+        const src = track.getAttribute("data-src");
+        audioSource.src = src;
+        audioPlayer.load();
+        audioPlayer.play();
+      });
     });
-}
-let songElements = document.getElementsByClassName('song');
-for (var i = 0; i < songElements.length; i++) {
-    /*
-        Ensure that on mouseover, CSS styles don't get messed up for active songs.
-    */
-    songElements[i].addEventListener('mouseover', function() {
-        this.style.backgroundColor = '#FF17D5';
+  </script>
 
-        this.querySelectorAll('.song-meta-data .song-title')[0].style.color = '#D420B5';
-        this.querySelectorAll('.song-meta-data .song-artist')[0].style.color = '#D420B5';
+  <!-- Section Biographie -->
+  <section id="bio">
+    <h1>BIOGRAPHIE</h1>
+    <p>Rosa<em>C</em>anine éclot en mars 2023. Tirant son nom de cet arbuste épineux et rustique, cette rose-chien leur ressemble. 
+       Une bande son rock, dynamique et directe, en français dans le texte, qui caresse l’âme et pique au cœur.
+       <br><br>
+       Cette bande aurait pu s’appeler « Les copains d’abord ». Originaire de Toulouse, 
+       les membres de ce généreux gang n’attendaient qu’une opportunité pour se retrouver. 
+       Biberonnés à la sauce rock de l’Amérique fugazienne, les guitares sont autant rageuses que mélodieuses. 
+       La rythmique, ancrée, soutient cette voix habitée et ces mots qui vous embarquent. 
+       <br><br>
+       Dès ses débuts, la scène s’impose comme une nécessité. 
+       La formation enchaîne les concerts tous terrains, des clubs aux festivals locaux jusqu’aux premières parties. 
+       2026 annonce la sortie d’un nouvel EP.
+       <br><br>
+       Faire communion est primordial. Le rock a cette vertu et Rosa<em>C</em>anine l'incarne à merveille.
+    </p>
+  </section>
 
-        if (!this.classList.contains('amplitude-active-song-container')) {
-            this.querySelectorAll('.play-button-container')[0].style.display = 'block';
-        }
+  <!-- Section Composition + Vidéo -->
+  <section id="bio-video" class="bio-video-section">
+    <div class="bio-video-container">
+      <div class="left">
+        <h2>Composition du groupe</h2>
+        <p>Chant / Guitare - Mathieu</p>
+        <p>Guitare / Choeur - Johan</p>
+        <p>Basse / Choeur - Flavien</p>
+        <p>Batterie - Eric</p>
 
-        this.querySelectorAll('img.bandcamp-grey')[0].style.display = 'none';
-        this.querySelectorAll('img.bandcamp-white')[0].style.display = 'block';
-        this.querySelectorAll('.song-duration')[0].style.color = '#D420B5';
-    });
-
-    /*
-        Ensure that on mouseout, CSS styles don't get messed up for active songs.
-    */
-    songElements[i].addEventListener('mouseout', function() {
-        this.style.backgroundColor = '#FFFFFF';
-        this.querySelectorAll('.song-meta-data .song-title')[0].style.color = '#D420B5';
-        this.querySelectorAll('.song-meta-data .song-artist')[0].style.color = '#607D8B';
-        this.querySelectorAll('.play-button-container')[0].style.display = 'none';
-        this.querySelectorAll('img.bandcamp-grey')[0].style.display = 'block';
-        this.querySelectorAll('img.bandcamp-white')[0].style.display = 'none';
-        this.querySelectorAll('.song-duration')[0].style.color = '#607D8B';
-    });
-
-    /*
-        Show and hide the play button container on the song when the song is clicked.
-    */
-    songElements[i].addEventListener('click', function() {
-        this.querySelectorAll('.play-button-container')[0].style.display = 'none';
-    });
-
-</script>
-
-<!-- Two -->
-<section id="player" class="wrapper alt style1">
-    <section class="spotlight">
-        <div id="blue-playlist-container" style="margin: 0 auto;">
-            <!-- Amplitude Player -->
-            <div id="amplitude-player">
-                <!-- Left Side Player -->
-                <div id="amplitude-left">
-                    <img data-amplitude-song-info="cover_art_url" src="images/photos/RC-pochette-2eme.png">
-                    <div id="player-left-bottom">
-                        <div id="time-container">
-                            <span class="current-time">
-                                <span class="amplitude-current-minutes">01</span>:<span class="amplitude-current-seconds">23</span>
-                            </span>
-                            <div id="progress-container">
-                                <input type="range" class="amplitude-song-slider">
-                                <progress id="song-played-progress" class="amplitude-song-played-progress" value="0.6527589359624809"></progress>
-                                <progress id="song-buffered-progress" class="amplitude-buffered-progress" value="1"></progress>
-                            </div>
-                            <span class="duration">
-                                <span class="amplitude-duration-minutes">02</span>:<span class="amplitude-duration-seconds">08</span>
-                            </span>
-                        </div>
-                        <div id="control-container">
-                            <div id="repeat-container">
-                                <div class="amplitude-repeat amplitude-repeat-off" id="repeat"></div>
-                                <div class="amplitude-shuffle amplitude-shuffle-off" id="shuffle"></div>
-                            </div>
-                            <div id="central-control-container">
-                                <div id="central-controls">
-                                    <div class="amplitude-prev" id="previous"></div>
-                                    <div class="amplitude-play-pause amplitude-paused" id="play-pause"></div>
-                                    <div class="amplitude-next" id="next"></div>
-                                </div>
-                            </div>
-                            <div id="volume-container">
-                                <div class="volume-controls">
-                                    <div class="amplitude-mute amplitude-not-muted"></div>
-                                    <input type="range" class="amplitude-volume-slider">
-                                    <div class="ms-range-fix"></div>
-                                </div>
-                                <div class="amplitude-shuffle amplitude-shuffle-off" id="shuffle-right"></div>
-                            </div>
-                        </div>
-                        <div id="meta-container">
-                            <span data-amplitude-song-info="name" class="song-name">08 - GOD</span>
-                            <div class="song-artist-album">
-                                <span data-amplitude-song-info="artist">RosaCanine</span>
-                                <span data-amplitude-song-info="album">RosaCanine - "Une Place"</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Left Side Player -->
-
-                <!-- Right Side Player -->
-                <div id="amplitude-right">
-                    <h5>Tracklist</h5>
-                        <div class="song amplitude-song-container amplitude-play-pause amplitude-paused" data-amplitude-song-index="0">
-                            <div class="song-now-playing-icon-container">
-                                <div class="play-button-container"></div>
-                                <img class="now-playing" src="images/logo/icons/now-playing.svg">
-                            </div>
-                            <div class="song-meta-data">
-                                <span class="song-title">01 - Réponds-moi</span>
-                            </div>
-                        </div>
-                            <div class="song amplitude-song-container amplitude-play-pause amplitude-paused" data-amplitude-song-index="1">
-                            <div class="song-now-playing-icon-container">
-                                <div class="play-button-container"></div>
-                                <img class="now-playing" src="images/logo/icons/now-playing.svg">
-                            </div>
-                            <div class="song-meta-data">
-                                <span class="song-title">02 - User Guide</span>
-                            </div>
-                        </div>
-                            
-                        </div>
-                </div>
-                <!-- End Right Side Player -->
-            </div>
-            <!-- End Amplitdue Player -->
+        <div class="social-icons">
+          <a target="_blank" href="https://rosacanine.bandcamp.com/merch">
+            <img src="images/logo/logo-boutique.svg" alt="Logo Boutique">
+          </a>
+          <a target="_blank" href="https://rosacanine.fr/musique">
+            <img src="images/logo/logo-music.svg" alt="Logo Music">
+          </a>
+          <a target="_blank" href="https://www.facebook.com/RosaCanineOfficiel">
+            <img src="images/logo/logo-fb.svg" alt="Logo Facebook">
+          </a>
+          <a target="_blank" href="https://www.instagram.com/rosacanineofficiel">
+            <img src="images/logo/logo-insta.svg" alt="Logo Instagram">
+          </a>
+          <a target="_blank" href="https://www.youtube.com/@rosacanineofficiel">
+            <img src="images/logo/logo-youtube.svg" alt="Logo Youtube">
+          </a>
+          <a href="mailto:rosacanine@gmail.com">
+            <img src="images/logo/logo-email.svg" alt="Logo Email">
+          </a>
         </div>
-    </section>
-</section>
+      </div>
 
+      <div class="right">
+        <a target="_blank" href="https://www.youtube.com/@rosacanineofficiel" class="lien-youtube">
+          <img src="images/photos/RC-M.png" alt="RC M" class="photo-video">
+        </a>
+      </div>
+    </div>
+  </section>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        Amplitude.init({
-        songs: [
-            {
-            name: "01 - Réponds-moi",
-            artist: "RosaCanine",
-            album: "Une Place",
-            url: "music/reponds_moi.mp3",  // ton MP3 réel
-            cover_art_url: "images/photos/RC-pochette-2eme.png"  // ta pochette
-            },
-            {
-            name: "02 - Lève la tête",
-            artist: "RosaCanine", 
-            album: "Une Place",
-            url: "music/leve_la_tete.mp3",
-            cover_art_url: "images/photos/RC-pochette-2eme.png"
-            }
-        // ajoute tes autres morceaux
-                    ]
-        });
-    });
-</script>
-    </body>
-        
+  <!-- Section Concerts -->
+  <section id="concerts" class="concerts">
+    <h1>CONCERTS</h1>
+
+    <div class="concerts-container">
+      <div class="concerts-photos">
+        <img src="images/photos/RC-photo-bio-new.jpg" alt="Concert 1">
+        <img src="images/photos/RC-C.png" alt="Concert 2">
+        <img src="images/photos/RC-B.png" alt="Concert 4">
+      </div>
+
+      <div class="concerts-table-container">
+        <div>
+          <h2>À venir</h2>
+      </div>
+      <table class="concerts-table">
+          <thead>
+              <tr>
+                  <th>Dates</th>
+                  <th>Lieux</th>
+                  <th>Villes</th>
+              </tr>
+          </thead>
+          <tbody>
+            
+         
+              <tr>
+                  <td>12 Décembre 2025</td>
+                  <td>La Compagnie</td>
+                  <td>Saint Félix Lauragais (31)</td>
+              </tr>
+              <tr>
+                  <td>13 Décembre 2025</td>
+                  <td>Ride'n'Rock</td>
+                  <td>Montans (81)</td>
+              </tr>
+              <tr>
+                  <td>27 Mars 2026</td>
+                  <td>Les Marins d'eau douce</td>
+                  <td>Ramonville Saint Agne (31)</td>
+              </tr>
+              <tr>
+                  <td>13 Avril 2026</td>
+                  <td>Printemps de Bourges</td>
+                  <td>Bourges (18)</td>
+              </tr>
+              <tr>
+                  <td>14 Avril 2026</td>
+                  <td>Printemps de Bourges</td>
+                  <td>Bourges (18)</td>
+              </tr>
+              <tr>
+                  <td>15 Avril 2026</td>
+                  <td>Printemps de Bourges</td>
+                  <td>Bourges (18)</td>
+              </tr>
+              <tr>
+                  <td>16 Avril 2026</td>
+                  <td>Printemps de Bourges</td>
+                  <td>Bourges (18)</td>
+              </tr>
+              <tr>
+                  <td>17 Avril 2026</td>
+                  <td>Printemps de Bourges</td>
+                  <td>Bourges (18)</td>
+              </tr>
+              <tr>
+                  <td>11 Juillet 2026</td>
+                  <td>Festival</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>12 Juillet 2026</td>
+                  <td>Festival</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>25 Juillet 2026</td>
+                  <td>Festival</td>
+                  <td></td>
+              </tr>
+              <tr>
+                  <td>26 Juillet 2026</td>
+                  <td>Festival</td>
+                  <td></td>
+              </tr>
+              
+          
+          </tbody>
+      </table>
+      <div>
+          <h2 class="passés">Passés</h2>
+      </div>
+      <table class="concerts-table">
+          <thead>
+              <tr>
+                  <th>Dates</th>
+                  <th>Lieux</th>
+                  <th>Villes</th>
+              </tr>
+          </thead>
+          <tbody>
+              
+              <tr>
+                  <td>29 Novembre 2025</td>
+                  <td>Hangar 2.0</td>
+                  <td>Bressuire (79)</td>
+              </tr>
+              <tr>
+                  <td>28 Novembre 2025</td>
+                  <td>La Taverne aux Ours</td>
+                  <td>Parthenay (79)</td>
+              </tr>
+              <tr>
+                  <td>27 Novembre 2025</td>
+                  <td>Le Bar'ouf</td>
+                  <td>Cholet (49)</td>
+              </tr>
+              <tr>
+                  <td>25 au 26 Novembre 2025</td>
+                  <td>Résidence</td>
+                  <td>Cholet (49)</td>
+              </tr>
+              <tr>
+                  <td>15 Novembre 2025</td>
+                  <td>La Ruelle</td>
+                  <td>Ségur-le-Château (19)</td>
+              </tr>
+              <tr>
+                  <td>14 Novembre 2025</td>
+                  <td>Le Dropkick</td>
+                  <td>Limoges (87)</td>
+              </tr>
+              <tr>
+                  <td>27 au 29 Octobre 2025</td>
+                  <td>Résidence</td>
+                  <td>L'Union (31)</td>
+              </tr>
+              <tr>
+                  <td>5 Septembre 2025</td>
+                  <td>Finale Tremplin Musical</td>
+                  <td>La Salvetat Saint-Gilles (31)</td>
+              </tr>
+              <tr>
+                  <td>9 Août 2025</td>
+                  <td>Festival Kiosq'n'roll</td>
+                  <td>Mirande (32)</td>
+              </tr>
+              <tr>
+                  <td>8 Août 2025</td>
+                  <td>L'antre Nous</td>
+                  <td>Noilhans (32)</td>
+              </tr>
+              <tr>
+                  <td>11 Juillet 2025</td>
+                  <td>Brasserie de la Halle</td>
+                  <td>Montauban (82)</td>
+              </tr>
+              <tr>
+                  <td>10 Juillet 2025</td>
+                  <td>Live Challenge</td>
+                  <td>Montbrun Lauragais (31)</td>
+              </tr>
+              <tr>
+                  <td>28 Juin 2025</td>
+                  <td>Tremplin Musical</td>
+                  <td>La Salvetat Saint-Gilles (31)</td>
+              </tr>
+              <tr>
+                  <td>21 Juin 2025</td>
+                  <td>Parc du Chateau</td>
+                  <td>Launaguet (31)</td>
+              </tr>
+              <tr>
+                  <td>20 Juin 2025</td>
+                  <td>Montblanc Festival</td>
+                  <td>Montblanc (32)</td>
+              </tr>
+              <tr>
+                  <td>19 Avril 2025</td>
+                  <td>Le Central</td>
+                  <td>Bourges (18)</td>
+              </tr>
+              <tr>
+                  <td>18 Avril 2025</td>
+                  <td>La Folie B</td>
+                  <td>Issoudun (36)</td>
+              </tr>
+              <tr>
+                  <td>18 Avril 2025</td>
+                  <td>The Black Swan</td>
+                  <td>Bourges (18)</td>
+              </tr>
+              <tr>
+                  <td>17 Avril 2025</td>
+                  <td>Le Murrayfield</td>
+                  <td>Bourges (18)</td>
+              </tr>
+              <tr>
+                  <td>17 Avril 2025</td>
+                  <td>Scène Berry </td>
+                  <td>Bourges (18)</td>
+              </tr>
+              <tr>
+                  <td>16 Avril 2025</td>
+                  <td>Café Ô Berry</td>
+                  <td>Vierzon (18)</td>
+              </tr>
+              <tr>
+                  <td>16 Avril 2025</td>
+                  <td>The Black Swan</td>
+                  <td>Bourges (18)</td>
+              </tr>
+              <tr>
+                  <td>13 Mars 2025</td>
+                  <td>Le REX - DEPORTIVO</td>
+                  <td>Toulouse (31)</td>
+              </tr>
+              <tr>
+                  <td>21 Février 2025</td>
+                  <td>Le 6MIC - Mouss et Akim (Zebda)</td>
+                  <td>Aix en Provence (13)</td>
+              </tr>
+              <tr>
+                  <td>25 Janvier 2025</td>
+                  <td>Salle Yves Montant</td>
+                  <td>Saint Alban (31)</td>
+              </tr>
+              <tr>
+                  <td>18 au 20 Janvier 2025</td>
+                  <td>Résidence</td>
+                  <td>Saint Alban (31)</td>
+              </tr>
+              <tr>
+                  <td>29 Novembre 2024</td>
+                  <td>Levrette Café</td>
+                  <td>Nantes (44)</td>
+              </tr>
+              <tr>
+                  <td>28 Novembre 2024</td>
+                  <td>Les Fleurs du Malt</td>
+                  <td>Nantes (44)</td>
+              </tr>
+              <tr>
+                  <td>25 au 27 Novembre 2024</td>
+                  <td>Le Zinor</td>
+                  <td>Montaigu (85)</td>
+              </tr>
+              <tr>
+                  <td>23 Novembre 2024</td>
+                  <td>Le Bar des artistes</td>
+                  <td>La Roche-sur-Yon (85)</td>
+              </tr>
+              <tr>
+                  <td>22 Novembre 2024</td>
+                  <td>La Minute Blonde</td>
+                  <td>Fontenay le Compte (85)</td>
+              </tr>
+              <tr>
+                  <td>9 Novembre 2024</td>
+                  <td>L'Impass</td>
+                  <td>Aussone (31)</td>
+              </tr>
+              <tr>
+                  <td>5 Octobre 2024</td>
+                  <td>Le Cercle des Citoyens</td>
+                  <td>Mont-de-Marsan (40)</td>
+              </tr>
+              <tr>
+                  <td>4 Octobre 2024</td>
+                  <td>Le Café Suspendu</td>
+                  <td>Montblanc (32)</td>
+              </tr>
+              <tr>
+                  <td>28 Septembre 2024</td>
+                  <td>La Scène</td>
+                  <td>Pau (64)</td>
+              </tr>
+              <tr>
+                  <td>6 Juillet 2024</td>
+                  <td>Festival de Lacave</td>
+                  <td>Lacave (09)</td>
+              </tr>
+              <tr>
+                  <td>29 Juin 2024</td>
+                  <td>Festival Rock'N Boulouze</td>
+                  <td>Seysses Savès (32)</td>
+              </tr>
+              <tr>
+                  <td>22 Juin 2024</td>
+                  <td>Parc du Chateau</td>
+                  <td>Launaguet (31)</td>
+              </tr>
+              <tr>
+                  <td>21 Juin 2024</td>
+                  <td>Place Gambetta</td>
+                  <td>Villefranche de Lauragais (31)</td>
+              </tr>
+              <tr>
+                  <td>20 Juin 2024</td>
+                  <td>Chez Granny</td>
+                  <td>Cornebarrieu (31)</td>
+              </tr>
+              <tr>
+                  <td>1 Juin 2024</td>
+                  <td>Festival ô Fraises</td>
+                  <td>Lapeyrouse-Fossat (32)</td>
+              </tr>
+              <tr>
+                  <td>27 Avril 2024</td>
+                  <td>Le Central</td>
+                  <td>Bourges (18)</td>
+              </tr>
+              <tr>
+                  <td>26 Avril 2024</td>
+                  <td>Showcase au Pages du Donjon</td>
+                  <td>Bourges (18)</td>
+              </tr>
+              <tr>
+                  <td>26 Avril 2024</td>
+                  <td>Le Central</td>
+                  <td>Bourges (18)</td>
+              </tr>
+              <tr>
+                  <td>26 Avril 2024</td>
+                  <td>Le Belzebuth</td>
+                  <td>Nevers (58)</td>
+              </tr>
+              <tr>
+                  <td>25 Avril 2024</td>
+                  <td>Scène Berry</td>
+                  <td>Bourges (18)</td>
+              </tr>
+              <tr>
+                  <td>13 Avril 2024</td>
+                  <td>Rock'Eup Fest</td>
+                  <td>Eup (31)</td>
+              </tr>
+              <tr>
+                  <td>23 Mars 2024</td>
+                  <td>Le Garage</td>
+                  <td>Carbonne (31)</td>
+              </tr>
+              <tr>
+                  <td>2 Février 2024</td>
+                  <td>P'aus Café</td>
+                  <td>Bonrepos sur Aussonnelle (31)</td>
+              </tr>
+              <tr>
+                  <td>3 Février 2024</td>
+                  <td>Detroit Brasserie</td>
+                  <td>Toulouse (31)</td>
+              </tr>
+              <tr>
+                  <td>26 Janvier 2024</td>
+                  <td>Celtic Pub</td>
+                  <td>Tarbes (65)</td>
+              </tr>
+              <tr>
+                  <td>8 au 10 Janvier 2024</td>
+                  <td>Le Bascala</td>
+                  <td>Bruguières (31)</td>
+              </tr>
+              <tr>
+                  <td>9 Décembre 2023</td>
+                  <td>Festival A69</td>
+                  <td>Castres (81)</td>
+              </tr>
+              <tr>
+                  <td>25 Novembre 2023</td>
+                  <td>Axis Musique</td>
+                  <td>Toulouse (31)</td>
+              </tr>
+              <tr>
+                  <td>2 au 3 Octobre 2023</td>
+                  <td>Le Cri'Art</td>
+                  <td>Auch (32)</td>
+              </tr>
+              <tr>
+                  <td>4 Août 2023</td>
+                  <td>La Grange</td>
+                  <td>Toulouse (31)</td>
+              </tr>
+              <tr>
+                  <td>30 Juin 2023</td>
+                  <td>The MAD Jack</td>
+                  <td>Mont-de-Marsan (40)</td>
+              </tr>
+              <tr>
+                  <td>28 au 29 Juin 2023</td>
+                  <td>La Tanière Records</td>
+                  <td>Saint Perdon (40)</td>
+              </tr>
+              <tr>
+                  <td>17 Mars 2023</td>
+                  <td>Au Relais de la Diligence</td>
+                  <td>Fonsorbes (31)</td>
+              </tr>
+              <tr>
+                  <td>16 Mars 2023</td>
+                  <td>La Brasserie du Levant</td>
+                  <td>Toulouse (31)</td>
+              </tr>
+
+              <!-- Ajoutez d'autres lignes ici pour plus de dates -->
+          </tbody>
+      </div>
+    </div>
+  </section>
+
+</body>
 </html>
