@@ -17,24 +17,27 @@ header {
 }
 
 header .logo-grand {
-  max-width: 250px;
+  max-width: 20%;
   width: 100%;
   height: auto;
 }
 
 em { color: #FF008C; font-style: normal; }
 
-h1, h2, h3, h5 {
-  text-align: center;
-  color: white;
-  margin-bottom: 10px;
-}
 
-h1 { font-size: 2em; color: #FF008C; margin-top: 80px; margin-bottom: 40px; }
-h2 { font-size: 2em; margin-bottom: 10px; }
-h3 { font-size: 1.3em; font-weight: normal; }
+h1 { font-size: 2em; color: #FF008C; text-align: center; }
+h2 { font-size: 2em; text-align: center; }
+h3 { font-size: 1.3em; font-weight: normal; text-align: center; }
 h5 { text-align: left; }
-p { font-size: 1.2em; color:white; margin:10px 10%; text-align:center; }
+p { font-size: 1.2em; margin:10px 10%; text-align: center; }
+
+/* === photo bio  ===*/
+.portrait {     
+  display:block ;  
+  margin :0 auto ;  
+  max-width :35% ;  
+  height:auto ;  
+}
 
 /* ===== PLAYER MP3 ===== */
 .player {
@@ -76,26 +79,58 @@ audio { width:100%; max-width:450px; margin-top:15px; }
 .tracklist li:hover { background: rgba(255,0,140,0.3); }
 .tracklist li.active { background: rgba(255,0,140,0.7); }
 
-/* ===== BIO + VIDEO ===== */
-.bio-video-container {
-  display:flex; justify-content: space-between; align-items:flex-start;
-  flex-wrap:wrap; gap:30px; width:100%;
+/* ===== VIDEO ===== */
+.videos-container {
+  display: flex;           /* met les vidéos côte à côte */
+  justify-content: center; /* centre les vidéos horizontalement */
+  gap: 20px;               /* espace entre les vidéos */
+  flex-wrap: wrap;         /* passe à la ligne si l’écran est trop petit */
 }
-.bio-video-section { margin-top:80px; }
-.bio-video-container .left { flex:1 1 400px; max-width:50%; }
-.bio-video-container .right { flex:1 1 400px; max-width:50%; text-align:right; }
 
-.social-icons {
-  margin-top: 80px; display:flex; flex-wrap:wrap; justify-content:center; gap:15px;
+.video-wrapper iframe {
+  width: 560px;    /* largeur standard YouTube */
+  height: 315px;   /* hauteur standard YouTube */
+  max-width: 100%; /* s’adapte à la taille de l’écran */
+  border: none;
 }
-.social-icons img { width:40px; height:40px; object-fit:contain; transition:opacity 0.2s ease; }
-.social-icons img:hover { opacity:0.5; }
 
-.photo-video { width:100%; height:auto; display:block; }
-.photo-video:hover { opacity:0.7; }
+/* ===== Photo ===== */
+.accueil-photos {
+  text-align: center;
+  padding: 20px;
+}
+
+.photo-center img {
+  max-width: 50%;
+  height: auto;
+  margin-bottom: 30px; /* espace sous la photo centrale */
+}
+
+.photo-side {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* espace entre RC-A et RC-C */
+  flex-wrap: wrap;
+}
+
+.photo-side img {
+  max-width: 45%;
+  height: auto;
+}
+
+
+/* ===== LIGNES DE SÉPARATION ===== */
+.section-divider {
+  width: 50%;
+  height: 2px;
+  background-color: #FF008C;
+  margin: 60px 0; /* espace avant/après */
+  opacity: 0.6;
+}
+
 
 /* ===== CONCERTS ===== */
-.concerts { display:flex; flex-direction:column; align-items:center; width:100%; margin-top:40px; }
+.concerts { display:flex; flex-direction:column; align-items:center; width:100%; }
 
 .concerts-container { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:30px; width:100%; }
 
@@ -109,8 +144,16 @@ audio { width:100%; max-width:450px; margin-top:15px; }
 .concerts-table td { padding:5px; text-align:center; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
 .concerts-table th { font-weight:bold; color:#ff008c; border-bottom:1px solid #ff008c; }
 .concerts-table td { color:white; }
-
+.avenir { margin-top:60px; }
 .passés { margin-top:60px; }
+
+/* ===== Reseaux sociaux ===== */
+.social-icons {
+  margin-bottom: 40px; display:flex; flex-wrap:wrap; justify-content:center; gap:15px;
+}
+.social-icons img { width:40px; height:40px; object-fit:contain; transition:opacity 0.2s ease; }
+.social-icons img:hover { opacity:0.5; }
+
 
 /* ===== RESPONSIVE ===== */
 @media (max-width:900px) {
