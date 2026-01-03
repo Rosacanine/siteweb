@@ -169,24 +169,10 @@ p {
 /******************VIDEOS********************/
 /*********************************************/
 
-.photo-video {  
-  max-width :70% ;   
-  height:auto ;
-  display:block ;
-  margin :20px auto ;
-}
 
-/********************
-.yt iframe{
-  aspect-ratio: 16/9;
-  width: 90%;
-}
-
-.yt {
-  margin-bottom: 20px;
-  text-align:center ;
-}
-*********************/
+   .video-section {
+      margin-bottom: 30px;
+   }
 
 /**********************************************/
 /******************CONCERTS********************/
