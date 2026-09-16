@@ -1,318 +1,647 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ═══════════════════════════════════════════
+   ROSACANINE — Couleur #FF008C
+   Style inspiré Cachemire & The Link Prod
+   ═══════════════════════════════════════════ */
+
+/* ─── VARIABLES COULEURS ─── */
+:root {
+    --rose: #FF008C;
+    --rose-hover: #cc006f;
+    --noir: #000000;
+    --noir-alt: #070707;
+    --gris: #ffffff;
+    --gris-clair: #cccccc;
+    --blanc: #ffffff;
+}
+
+/* ─── RESET ─── */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-  background-color: #000000;
-  font-family: 'Oswald', sans-serif;
-  padding-top: 110px; /* Compense la hauteur du header fixe */
+    font-family: 'Oswald', Arial, sans-serif;
+    font-weight: 300;
+    color: var(--blanc);
+    background-color: var(--noir);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding-top: 170px;
 }
 
-em {
-  color: #FF008C;
-  font-style: normal;
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-h1 {
-  font-size: 2em;
-  color: #FF008C;
-  text-align: center;
-  margin-bottom: 40px;
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s, opacity 0.3s;
 }
 
-h2 {
-  text-align: center;
-  margin-bottom: 40px;
-  color: white;
+a:hover {
+    opacity: 0.8;
 }
 
-header {
-  background-color: rgb(0, 0, 0);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  display: flex;
-  align-items: center; /* Aligne les éléments verticalement */
-  padding: 15px; /* Ajustez le padding selon vos besoins */
+/* ─── HEADER FIXE ─── */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--noir);
+    padding: 15px 0 10px 0;
+    text-align: center;
 }
 
-.top {
-  display: flex;
-  align-items: center; /* Aligne les éléments verticalement */
-  justify-content: space-around;
-}
-
-/* Conteneur du logo */
-
-.logo-container img {
-   height: auto; /* Assurez-vous que la hauteur est automatique pour garder les proportions */
-   max-height: 80px; /* Hauteur maximale pour le logo grand */
-}
-
-.logo-petit {
-  display: none; /* Masque le petit logo par défaut */
-}
-
-.menu-icon {
-   cursor: pointer;
-}
-
-.menu-icon i {
-   font-size: 24px; /* Taille de l'icône du menu */
-   color: #ff008c; /* Couleur de l'icône du menu */
-}
-
-.lien-icone {
-    display: inline-block; 
-    margin-left: 15px; /* Espacement entre les icônes */
-}
-
-.lien-icone img {
-    width: 40px; /* Taille des icônes des réseaux sociaux */
-    height: auto; /* Maintient le ratio d'aspect */
-}
-
-.lien-icone:hover {
-    opacity: 0.5; /* Effet au survol */
-}
-
-/**********************************************/
-/******************NAVIGATION******************/
-/**********************************************/
-
-nav {
-    display: none; 
-    position: fixed; 
-    top: 110px; 
-    left: 0; 
-    width: 100%; 
-    background-color: rgba(0,0,0,0.9); 
-    z-index: 999; 
-}
-
-nav.show-menu {
-    display: block; 
-}
-
-nav ul {
-    list-style-type: none; 
-    display: flex; 
-    justify-content: center; 
-    padding:10px; 
-}
-
-nav ul li {
-    margin: 0 15px; 
-}
-
-nav ul li a {
-    color: white; 
-    text-decoration:none; 
-    font-size:1.2em; 
-    transition:.3s ease color;
-    font-weight: bold;
-    
-}
-
-nav ul li a:hover {
-    color:#FF008C; 
-}
-
-/* Ajustement de la marge pour le contenu principal en dessous du nav*/
-main {
-    padding-top: 50px; 
-}
-
-section {
-  scroll-margin-top: 170px;
-}
-
-/**********************************************/
-/******************BIO************************/
-/*********************************************/
-
-p {
-    font-size:1.3em; 
-    color:white; 
-    margin :40px 25%; 
-    line-height :1.4 ; 
-    text-align:center ; 
-}
-
-.portrait {     
-   display:block ;  
-   margin :0 auto ;  
-   max-width :35% ;  
-   height:auto ;  
-   padding-bottom :40px ;  
-}
-
-#voir-plus-contenu {
-   display: none;
-}
-
-#voir-plus-bouton {
-   color: #FF008C;
-   text-decoration: none;
-   cursor: pointer;
-   font-size: 0.9em;
-}
-
-/**********************************************/
-/******************MUSIQUE*********************/
-/**********************************************/
-
-.music {  
-   text-align:center ;  
-   padding-bottom :40px ;  
-}
-
-.album {  
-   width :100% ;  
-   max-width :400px ;  
-   display:block ;  
-   margin :20px auto ; 
-}
-
-.album:hover {  
-   opacity :0.6 ;
-   transform: scale(1.02);  
-}
-
-/**********************************************/
-/******************PHOTOS**********************/
-/*********************************************/
-
-.accueil-photos {  
-   text-align:center ; 
-   padding :20px ; /**Marge au-dessus**/ 
-}
-
-.photogrande {  
-   max-width :50% ;   
-   height:auto ;
-   margin-bottom: 50px;
-}
-
-.photopetite {  
-   margin :20px ;   
-   max-width :40% ;   
-   height:auto ;  
-}
-
-.photopetite2 {  
-   margin :20px ;   
-   max-width :20% ;   
-   height:auto ;  
-}
-
-/* ==========================================================================
-     ===============   VIDEOS YOUTUBE   =======================================
-     ========================================================================== */
-  
-.video-container {
+.header .wrap {
     display: flex;
     justify-content: center;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header-logo img {
+    height: 70px;
+    width: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.hero-social {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.hero-social a {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s, opacity 0.3s;
+}
+
+.hero-social a:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+/* ═══════════════════════════════════════════
+   LAYOUT GLOBAL (2/3 GAUCHE - 1/3 DROITE STICKY)
+   ═══════════════════════════════════════════ */
+.page-container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 20px 60px 20px;
+    gap: 40px;
+}
+
+.main-column {
+    flex: 2;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.sidebar-column {
+    flex: 1;
+    min-width: 280px;
+    max-width: 360px;
+}
+
+/* FIXATION DU LECTEUR EN STICKY */
+.sticky-player {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 200px;
+}
+
+/* ═══════════════════════════════════════════
+   TITRES & TYPOGRAPHIE
+   ═══════════════════════════════════════════ */
+.titre {
+    font-size: 2rem;
+    font-weight: 200;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rose);
+}
+
+.titre2 {
+    font-size: 2rem;
+    font-weight: 200;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rose);
+}
+
+.titre3 {
+    font-size: 1.6rem;
+    font-weight: 200;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--rose); 
+}
+
+.accent {
+    color: var(--rose);
+    font-style: normal;
+}
+
+/* ═══════════════════════════════════════════
+   SECTION BIOGRAPHIE (GRILLE PHOTO + TEXTE)
+   ═══════════════════════════════════════════ */
+.bio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 30px;
-    flex-wrap: wrap;
+    align-items: start;
 }
 
-.video-wrapper {
-    width: 560px;
-    max-width: 100%;
-}
-
-.video-wrapper iframe,
-.video-wrapper img {
+.bio-photo .hero-img {
     width: 100%;
     height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Style unifié des boutons toggle */
+.btn-toggle {
+    background: transparent;
+    border: 2px solid var(--rose);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.btn-toggle:hover {
+    background-color: var(--rose);
+    transform: scale(1.1);
+}
+
+.toggle-icon {
+    width: 16px;
+    height: 16px;
+    stroke: var(--rose);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    transition: stroke 0.25s ease, transform 0.3s ease;
+}
+
+.btn-toggle:hover .toggle-icon {
+    stroke: var(--noir);
+}
+
+/* Animation du signe + vers - */
+.toggle-icon .icon-v {
+    transform-origin: center;
+    transition: transform 0.3s ease, opacity 0.25s ease;
+}
+
+/* État actif (bouton déplié) */
+.btn-toggle.active .toggle-icon .icon-v {
+    transform: rotate(90deg);
+    opacity: 0;
+}
+
+/* --- AFFICHAGE BIOGRAPHIE PAR DÉFAUT (ORDINATEUR) --- */
+#bio-toggle {
+    display: none; /* Le bouton '+' est masqué sur ordinateur */
+}
+
+.bio-content p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: var(--blanc);
+}
+
+.bio-suite {
+    display: block; /* La bio est affichée entièrement par défaut sur ordinateur */
+}
+
+/* ═══════════════════════════════════════════
+   LECTEUR AUDIO STICKY (COLONNE DROITE)
+   ═══════════════════════════════════════════ */
+.player {
+    background-color: var(--noir-alt);
+    padding: 20px;
+    border: 1px solid #1a1a1a;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.player .cover {
+    width: 100%;
+    max-width: 220px;
+    margin: 0 auto;
+}
+
+.player .cover img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 8px 25px rgba(255, 0, 140, 0.2);
+}
+
+.player audio {
+    width: 100%;
+    height: 35px;
+    accent-color: var(--rose);
+}
+
+.player .tracklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.player .tracklist li {
+    padding: 10px 12px;
+    font-size: 1rem;
+    border-bottom: 1px solid #1a1a1a;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.player .tracklist li:last-child {
+    border-bottom: none;
+}
+
+.player .tracklist li em {
+    color: var(--rose);
+    font-style: normal;
+    font-weight: 600;
+}
+
+.player .tracklist li:hover {
+    background-color: rgba(255, 0, 140, 0.1);
+}
+
+.player .tracklist li.active {
+    color: var(--rose);
+    font-weight: 600;
+    background-color: rgba(255, 0, 140, 0.15);
+    border-left: 3px solid var(--rose);
+}
+
+.lien-music {
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.lien-music a {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s, opacity 0.3s;
+}
+
+.lien-music a:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+/* ═══════════════════════════════════════════
+   VIDÉOS
+   ═══════════════════════════════════════════ */
+.video-wrap {
+    width: 100%;
+}
+
+.youtube-facade {
+    position: relative;
+    cursor: pointer;
     aspect-ratio: 16 / 9;
-    display: block;
+    background-color: var(--noir);
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.youtube-facade img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.youtube-facade .play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 68px;
+    height: 48px;
+    pointer-events: none;
+    transition: transform 0.2s;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+}
+
+.youtube-facade:hover .play-btn {
+    transform: translate(-50%, -50%) scale(1.15);
+}
+
+.youtube-facade iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     border: none;
 }
 
-/* Optionnel : effet visuel */
-.lien-youtube img {
-    cursor: pointer;
-    transition: transform 0.3s ease;
+/* ═══════════════════════════════════════════
+   CONCERTS
+   ═══════════════════════════════════════════ */
+#concerts-avenir,
+#concerts-passes {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
 }
 
-.lien-youtube img:hover {
-    transform: scale(1.02);
-    opacity :0.6 ;
+.concerts {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
 }
 
-.video-section {
-    margin-bottom: 40px;
+.concert {
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 15px;
+    border-bottom: 1px solid #1a1a1a;
+    transition: background-color 0.2s;
 }
 
-/**********************************************/
-/******************CONCERTS********************/
-/*********************************************/
-
-.concerts {  
-   display:flex ;  
-   flex-direction :column ;  
-   align-items:center ;  
-   width :100% ;  
+.concert:hover {
+    background-color: rgba(255, 0, 140, 0.04);
 }
 
-.concerts-table {  
-   width : 50% ;
-   max-width :800px ;
-   table-layout :fixed ;
-   border-collapse :collapse ;
+.concert time {
+    flex: 0 0 auto;
+    font-weight: 400;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: var(--gris);
+    text-align: left;
+    white-space: nowrap;
 }
 
-.concerts-table th,
-.concerts-table td {  
-   padding :5px ; /* hauteur entre les lignes du tableau */
-   text-align:center ;
-   overflow:hidden ;
-   text-overflow :ellipsis ;
-   white-space :nowrap ;
+.concert .lieu {
+    flex: 1;
+    font-size: 1.2rem;
+    color: var(--gris);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.concerts-table th {  
-   font-weight:bold ;
-   color:#ff008c ;
-   border-bottom :1px solid #ff008c ;
+.concert .ville {
+    flex: 0 0 auto;
+    font-size: 1.2rem;
+    color: var(--gris);
+    text-align: right;
+    white-space: nowrap;
 }
 
-.concerts-table td {  
-   color:white ;
+.concert .sep {
+    display: inline-block;
+    vertical-align: middle;
 }
 
-.passés {
-   margin-top: 60px;
+.sep-icon {
+    width: 20px;
+    height: 20px;
+    margin: 0px 2px;
+    flex: 0 0 auto;
+    display: inline-block;
+    vertical-align: middle;
 }
 
-/**********************************************/
-/******************FOOTER*********************/
-/*********************************************/
+.footer {
+    background-color: var(--noir);
+    padding: 30px 0;
+    border-top: 1px solid var(--rose);
+    color: var(--gris-clair);
+    font-style: italic;
+}
 
-footer {   
-     text-align:center ;
-     padding :50px ;
- }
+.footer .wrap {
+    text-align: center;
+}
 
-footer span {   
-     font-size:.8em ;
-     font-style :italic ;
-     color:white ;
- }
+.copyright .accent {
+    font-style: italic;
+}
 
- /***********************************************/
-/*****************Page musique*****************/
-/**********************************************/
+/* ═══════════════════════════════════════════
+   RESPONSIVE TABLETTE (<= 992px)
+   ═══════════════════════════════════════════ */
+@media (max-width: 992px) {
+    .page-container {
+        flex-direction: column;
+        padding-top: 20px;
+    }
 
-.page-album {
-   width: 100%;
-   max-width: 300px; /* Ajustez selon vos besoins */
-   display: block;
-   margin: 20px auto; /* Centrer l'image */
- }
+    .main-column,
+    .sidebar-column {
+        width: 100%;
+        max-width: 100%;
+        flex: none;
+    }
+
+    .sticky-player {
+        position: static;
+    }
+
+    .bio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bio-photo {
+        max-width: 450px;
+        margin: 0 auto;
+    }
+
+    /* Le bouton '+' s'affiche uniquement sur tablette / mobile */
+    #bio-toggle {
+        display: inline-flex;
+    }
+
+    /* La suite de la bio est masquée par défaut sur mobile/tablette */
+    .bio-suite {
+        display: none;
+    }
+
+    /* Dépliage au clic via le JS */
+    .bio-suite.visible {
+        display: block;
+    }
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE MOBILE (<= 600px)
+   ═══════════════════════════════════════════ */
+@media (max-width: 600px) {
+
+    .header-logo img {
+        height: 50px;
+        margin-bottom: 20px;
+    }
+        
+    .hero-social a {
+        width: 30px;
+        height: 30px;
+    }
+
+    .hero-social {
+        gap: 15px;
+        margin-bottom: 0;
+    }
+
+    .titre {
+        font-size: 1.7rem;
+        gap: 12px;
+    }
+    
+    .titre2 {
+        font-size: 1.7rem;
+        justify-content: flex-start;
+    }
+
+    .bio-content p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+/* STRUCTURE CONCERT SUR MOBILE — TRONCATURE SUR LA VILLE (...) */
+.concert {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 10px 4px;
+    gap: 10px;
+    min-width: 0; /* Permet aux enfants flex de se rétrécir */
+}
+
+.concert time {
+    font-size: 0.85rem;
+    flex: 0 0 auto;
+    text-align: left;
+}
+
+.concert .lieu {
+    font-size: 0.85rem;
+    text-align: left;
+    flex: 0 0 auto; /* Garde la salle affichée en entier */
+    white-space: nowrap;
+    margin-right: 0;
+}
+
+.concert .ville {
+    font-size: 0.85rem;
+    text-align: left;
+    flex: 0 1 auto;        /* Permet à la ville de se réduire si la ligne dépasse */
+    min-width: 0;         /* Autorise la réduction en flexbox */
+    white-space: nowrap;  /* Empêche le retour à la ligne */
+    overflow: hidden;      /* Masque le texte qui dépasse */
+    text-overflow: ellipsis; /* Affiche les '...' */
+}
+
+    /* Masquage propre des séparateurs sans impacter la structure flex */
+    .concert .sep-icon {
+        display: none;
+    }
+
+    .footer {
+        font-size: 0.8rem;
+    }
+
+    body {
+        padding-top: 100px;
+    }
+
+    .header {
+        padding: 10px 0 5px 0;
+    }
+
+    .header-logo img {
+        height: 45px;
+        margin-bottom: 15px;
+    }
+
+    .hero-social {
+        gap: 12px;
+        margin-bottom: 10px;
+    }
+
+    .hero-social a {
+        width: 26px;
+        height: 26px;
+    }
+
+    .player .tracklist li em {
+        font-weight: 400;
+        font-size: 1rem;
+    }
+
+    .player .tracklist li.active {
+        font-weight: 400;
+        font-size: 1rem;
+    }
+
+    .player .tracklist li {
+        font-weight: 200;
+        font-size: 1rem;
+    }
+}
