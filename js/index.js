@@ -51,24 +51,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // ─── 4. FAÇADE YOUTUBE ──
     
-    var mainFacade = document.querySelector('.youtube-facade');
-    if (mainFacade) {
-        mainFacade.addEventListener('click', function () {
-            var videoId = this.getAttribute('data-id');
-            if (videoId && !this.querySelector('iframe')) {
-                var iframe = document.createElement('iframe');
-                iframe.setAttribute('src', 'https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&rel=0');
-                iframe.setAttribute('title', 'YouTube video player');
-                iframe.setAttribute('frameborder', '0');
-                iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
-                iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
-                iframe.setAttribute('allowfullscreen', 'true');
-                
-                this.innerHTML = '';
-                this.appendChild(iframe);
-            }
-        });
-    }
+var mainFacade = document.querySelector('.youtube-facade');
+if (mainFacade) {
+    mainFacade.addEventListener('click', function () {
+        var videoId = this.getAttribute('data-id');
+        if (videoId && !this.querySelector('iframe')) {
+            var iframe = document.createElement('iframe');
+            
+            // Ajout des paramètres cc_load_policy=0 et cc_lang_pref=fr pour bloquer les sous-titres
+            iframe.setAttribute('src', 'https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&rel=0&cc_load_policy=0&cc_lang_pref=fr');
+            
+            iframe.setAttribute('title', 'YouTube video player');
+            iframe.setAttribute('frameborder', '0');
+            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+            iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+            iframe.setAttribute('allowfullscreen', 'true');
+            
+            this.innerHTML = '';
+            this.appendChild(iframe);
+        }
+    });
+}
 
     // ─── 5. GALERIE PHOTOS ───
     var photoThumbLinks = document.querySelectorAll('.photo-thumb-link');
