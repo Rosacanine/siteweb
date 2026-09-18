@@ -49,26 +49,53 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ─── 4. FAÇADE YOUTUBE ──
-    
+    // ─── 4. FAÇADE YOUTUBE (AVEC API POUR BLOQUER LES SOUS-TITRES) ──
+
+// Charger le script d'API YouTube en arrière-plan
+if (!window.YT) {
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+}
+
 var mainFacade = document.querySelector('.youtube-facade');
 if (mainFacade) {
     mainFacade.addEventListener('click', function () {
         var videoId = this.getAttribute('data-id');
         if (videoId && !this.querySelector('iframe')) {
-            var iframe = document.createElement('iframe');
             
-            // Ajout des paramètres cc_load_policy=0 et cc_lang_pref=fr pour bloquer les sous-titres
-            iframe.setAttribute('src', 'https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&rel=0&cc_load_policy=0&cc_lang_pref=fr');
-            
-            iframe.setAttribute('title', 'YouTube video player');
-            iframe.setAttribute('frameborder', '0');
-            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
-            iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
-            iframe.setAttribute('allowfullscreen', 'true');
-            
+            // Créer le conteneur de l'iframe
+            var playerContainer = document.createElement('div');
+            playerContainer.id = 'yt-player-container';
             this.innerHTML = '';
-            this.appendChild(iframe);
+            this.appendChild(playerContainer);
+
+            // Initialiser le lecteur via l'API
+            new YT.Player('yt-player-container', {
+                videoId: videoId,
+                host: 'https://www.youtube-nocookie.com',
+                playerVars: {
+                    'autoplay': 1,
+                    'rel': 0,
+                    'cc_load_policy': 0, // Désactive l'affichage par défaut
+                    'hl': 'fr'
+                },
+                events: {
+                    'onReady': function (event) {
+                        var player = event.target;
+                        player.playVideo();
+                        
+                        // Force la désactivation de la piste de sous-titres dès la lecture
+                        try {
+                            player.unloadModule('captions');  // Désactive le module de sous-titres
+                            player.setOption('captions', 'track', {}); // Écrase la piste active
+                        } catch (e) {
+                            // Sécurité au cas où le module n'est pas encore chargé
+                        }
+                    }
+                }
+            });
         }
     });
 }
